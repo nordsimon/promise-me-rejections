@@ -1,0 +1,26 @@
+{
+  "name": "throw-unhandled-rejections",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/tape tests/* | ./node_modules/.bin/tap-diff"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bluebird": "3.4.6",
+    "es6-promise": "3.2.1",
+    "fbjs": "0.8.4",
+    "promise": "7.1.1",
+    "q": "1.4.1",
+    "tap-diff": "0.1.1",
+    "tape": "4.6.0",
+    "yaku": "0.16.6"
+  },
+  "dependencies": {
+    "glob-fs": "0.1.6",
+    "uuid": "2.0.2"
+  }
+}
