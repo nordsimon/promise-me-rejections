@@ -76,10 +76,27 @@ test('Yaku', function(t) {
   })
 })
 
+test('When', function(t) {
+  const id = uuid.v4()
+  const Promise = require('when').Promise
+
+  listeners[id] = (e) => {
+    t.assert(`${e.message}` === id, 'Error is catched')
+    t.end()
+  }
+
+  new Promise(() => {
+    throw new Error(id)
+  })
+})
+
 test('ES6 Promise', function(t) {
   const id = uuid.v4()
   const Promise = require('es6-promise').Promise;
 
+  t.fail('This is a failing test')
+  return t.end()
+  
   listeners[id] = (e) => {
     t.assert(`${e.message}` === id, 'Error is catched')
     t.end()

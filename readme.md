@@ -14,9 +14,8 @@ And folks, remember to add those catches
 | Native                  | ✓       | wip        | wip             
 | Q                       | ✓       | wip          | wip               
 | Yaku                    | ✓       | wip          | wip               
-| then/promise            | ✓       | wip          | wip               
-| ES6 Promises (WHATWG)²  | wip     | wip          | wip               
-| WhenJS                  | wip       | wip         | wip             
+| then/promise (>7.1.1)   | ✓       | wip          | wip               
+| WhenJS                  | ✓       | wip         | wip             
 | es6-promise             | wip       | wip          | wip               
 
 | Symbol | Meaning                                      |

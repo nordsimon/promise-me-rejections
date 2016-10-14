@@ -16,19 +16,23 @@ module.exports = function(usrHandler) {
     switch(pkg.name) {
       case 'es6-promise':
         var x = require(path.resolve(path.parse(file).dir))
-        
+
         break
       case 'promise':
-        require(path.resolve(path.parse(file).dir,'lib','rejection-tracking')).enable(
-          {
-            allRejections: true,
-            onUnhandled: function(id, e) {
-              process.nextTick(function() {
-                (usrHandler) ? usrHandler(e) : handler(e)
-              })
+        try {
+          require(path.resolve(path.parse(file).dir,'lib','rejection-tracking')).enable(
+            {
+              allRejections: true,
+              onUnhandled: function(id, e) {
+                process.nextTick(function() {
+                  (usrHandler) ? usrHandler(e) : handler(e)
+                })
+              }
             }
-          }
-        )
+          )
+        } catch (e) {
+          console.error(`${pkg.version} of ${pkg.name} doesn't support tracking unhandled rejections`)
+        }
         break
     }
   })
